@@ -101,8 +101,12 @@ val.append(card)
 val.append(active)
 val.append(sal)
 
+#predicting for a single value
+
+#forming a single vector
 val = np.array(val)
 
+#encoding and scaling a single vector
 val = onehotencoder.transform(val.reshape(1,-1)).toarray()[:, 1:]
 val = sc.transform(val)
 
